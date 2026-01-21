@@ -1,24 +1,22 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
 
-int main()
-{
-    int src_fd, dest_fd;
-    char buffer[1024];
-    ssize_t bytesRead;
+int main() {
+    FILE *src, *dest;
+    char ch;
 
-    src_fd = open("source.txt", O_RDONLY);
-    dest_fd = open("destination.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    src = fopen("a.txt", "r");
+    dest = fopen("b.txt", "w");
 
-    while ((bytesRead = read(src_fd, buffer, sizeof(buffer))) > 0)
-    {
-        write(dest_fd, buffer, bytesRead);
+    while ((ch = fgetc(src)) != EOF) {
+        fputc(ch, dest);
     }
 
-    close(src_fd);
-    close(dest_fd);
+    fclose(src);
+    fclose(dest);
 
-    printf("File copied successfully.\n");
+    printf("Copied Successfully");
     return 0;
 }
+
+Output
+Copied Successfully
