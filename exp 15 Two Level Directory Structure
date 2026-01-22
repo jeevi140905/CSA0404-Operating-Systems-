@@ -1,0 +1,110 @@
+#include <stdio.h>
+#include <string.h>
+
+struct user {
+    char uname[20];
+    char files[5][20];
+    int fcount;
+};
+
+int main() {
+    struct user u[5];
+    int ucount = 0, choice;
+
+    do {
+        printf("\n1.Create User\n2.Create File\n3.Display\n4.Exit\n");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            printf("Enter user name: ");
+            scanf("%s", u[ucount].uname);
+            u[ucount].fcount = 0;
+            ucount++;
+        }
+
+        if (choice == 2) {
+            int id;
+            printf("Enter user index: ");
+            scanf("%d", &id);
+            printf("Enter file name: ");
+            scanf("%s", u[id].files[u[id].fcount]);
+            u[id].fcount++;
+        }
+
+        if (choice == 3) {
+            for (int i = 0; i < ucount; i++) {
+                printf("\nUser: %s\n", u[i].uname);
+                for (int j = 0; j < u[i].fcount; j++)
+                    printf("  %s\n", u[i].files[j]);
+            }
+        }
+    } while (choice != 4);
+
+    return 0;
+}
+
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.776 Mb
+Sample Input
+1
+user1
+1
+user2
+2
+0
+fileA.txt
+2
+0
+fileB.txt
+2
+1
+data1.doc
+3
+4
+Your Output
+1.Create User
+2.Create File
+3.Display
+4.Exit
+Enter user name: 
+1.Create User
+2.Create File
+3.Display
+4.Exit
+Enter user name: 
+1.Create User
+2.Create File
+3.Display
+4.Exit
+Enter user index: Enter file name: 
+1.Create User
+2.Create File
+3.Display
+4.Exit
+Enter user index: Enter file name: 
+1.Create User
+2.Create File
+3.Display
+4.Exit
+Enter user index: Enter file name: 
+1.Create User
+2.Create File
+3.Display
+4.Exit
+
+User: user1
+  fileA.txt
+  fileB.txt
+
+User: user2
+  data1.doc
+
+1.Create User
+2.Create File
+3.Display
+4.Exit
+
