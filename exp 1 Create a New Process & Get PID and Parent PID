@@ -31,4 +31,12 @@ int main()
 
     return 0;
 }
-
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.652 Mb
+Your Output
+Parent Process: PID = 16374, Child PID = 16375
+Child Process: PID = 16375, Parent PID = 1
