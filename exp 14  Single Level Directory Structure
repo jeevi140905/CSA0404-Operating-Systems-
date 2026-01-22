@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char files[10][20];
+    int n = 0, choice;
+    char name[20];
+
+    do {
+        printf("\n1.Create File\n2.Display Files\n3.Exit\n");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter file name: ");
+                scanf("%s", name);
+                strcpy(files[n], name);
+                n++;
+                break;
+
+            case 2:
+                printf("Files in directory:\n");
+                for (int i = 0; i < n; i++)
+                    printf("%s\n", files[i]);
+                break;
+        }
+    } while (choice != 3);
+
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.676 Mb
+Sample Input
+1
+file1
+1
+file2
+2
+3
+file1
+4
+Your Output
+
+----- SINGLE LEVEL DIRECTORY -----
+1. Create File
+2. Display Files
+3. Search File
+4. Exit
+Enter your choice: Enter file name: File created successfully.
+
+----- SINGLE LEVEL DIRECTORY -----
+1. Create File
+2. Display Files
+3. Search File
+4. Exit
+Enter your choice: Enter file name: File created successfully.
+
+----- SINGLE LEVEL DIRECTORY -----
+1. Create File
+2. Display Files
+3. Search File
+4. Exit
+Enter your choice: Files in directory:
+1. file1
+2. file2
+
+----- SINGLE LEVEL DIRECTORY -----
+1. Create File
+2. Display Files
+3. Search File
+4. Exit
+Enter your choice: Enter file name to search: File found: file1
+
+----- SINGLE LEVEL DIRECTORY -----
+1. Create File
+2. Display Files
+3. Search File
+4. Exit
+Enter your choice: Exiting program...
+
