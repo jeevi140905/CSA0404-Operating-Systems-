@@ -1,0 +1,78 @@
+#include <stdio.h>
+
+int main() {
+    int n, m, i, j, k;
+    printf("Enter number of processes and resources: ");
+    scanf("%d %d", &n, &m);
+
+    int alloc[n][m], max[n][m], need[n][m], avail[m], finish[n], safe[n];
+
+    printf("Enter Allocation matrix:\n");
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            scanf("%d", &alloc[i][j]);
+
+    printf("Enter Maximum matrix:\n");
+    for (i = 0; i < n; i++)
+        for (j = 0; j < m; j++)
+            scanf("%d", &max[i][j]);
+
+    printf("Enter Available resources:\n");
+    for (i = 0; i < m; i++)
+        scanf("%d", &avail[i]);
+
+    for (i = 0; i < n; i++) {
+        finish[i] = 0;
+        for (j = 0; j < m; j++)
+            need[i][j] = max[i][j] - alloc[i][j];
+    }
+
+    int count = 0;
+    while (count < n) {
+        int found = 0;
+        for (i = 0; i < n; i++) {
+            if (!finish[i]) {
+                for (j = 0; j < m; j++)
+                    if (need[i][j] > avail[j])
+                        break;
+
+                if (j == m) {
+                    for (k = 0; k < m; k++)
+                        avail[k] += alloc[i][k];
+                    safe[count++] = i;
+                    finish[i] = 1;
+                    found = 1;
+                }
+            }
+        }
+        if (!found) {
+            printf("System is in unsafe state\n");
+            return 0;
+        }
+    }
+
+    printf("System is in safe state\nSafe sequence: ");
+    for (i = 0; i < n; i++)
+        printf("P%d ", safe[i]);
+
+    return 0;
+}
+sample input
+5 3
+0 1 0
+2 0 0
+3 0 2
+2 1 1
+0 0 2
+7 5 3
+3 2 2
+9 0 2
+2 2 2
+4 3 3
+3 3 2
+Output
+Enter number of processes and resources: Enter Allocation matrix:
+Enter Maximum matrix:
+Enter Available resources:
+System is in safe state
+Safe sequence: P1 P3 P4 P0 P2 
