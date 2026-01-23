@@ -1,0 +1,221 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct emp {
+    int id;
+    char name[30];
+    float salary;
+};
+
+int main() {
+    FILE *fp;
+    struct emp e;
+    int choice, n, i, id;
+
+    fp = fopen("emp.dat", "rb+");
+    if (fp == NULL)
+        fp = fopen("emp.dat", "wb+");
+
+    do {
+        printf("\n1.Add Employee\n2.Display All\n3.Search\n4.Exit\nEnter choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+        case 1:
+            printf("Enter employee id, name, salary: ");
+            scanf("%d %s %f", &e.id, e.name, &e.salary);
+            fseek(fp, 0, SEEK_END);
+            fwrite(&e, sizeof(e), 1, fp);
+            break;
+
+        case 2:
+            rewind(fp);
+            while (fread(&e, sizeof(e), 1, fp))
+                printf("ID:%d Name:%s Salary:%.2f\n", e.id, e.name, e.salary);
+            break;
+
+        case 3:
+            printf("Enter employee id to search: ");
+            scanf("%d", &id);
+            rewind(fp);
+            while (fread(&e, sizeof(e), 1, fp)) {
+                if (e.id == id) {
+                    printf("Found -> ID:%d Name:%s Salary:%.2f\n", e.id, e.name, e.salary);
+                    break;
+                }
+            }
+            break;
+        }
+    } while (choice != 4);
+
+    fclose(fp);
+    return 0;
+}
+Sample Input
+1
+101
+Rahul
+35000
+Your Output
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Display All
+3.Search
+4.Exit
+Enter choice: Enter employee id, name, salary: 
+1.Add Employee
+2.Dis...
