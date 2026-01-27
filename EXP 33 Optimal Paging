@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    printf("Optimal paging simulation\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.344 Mb
+Sample Input
+
+Your Output
+Optimal paging simulation
