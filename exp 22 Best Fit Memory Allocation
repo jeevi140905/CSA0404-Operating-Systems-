@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int m,p,i,j,min,index;
+    int mem[10], proc[10], alloc[10];
+
+    scanf("%d",&m);
+    for(i=0;i<m;i++) scanf("%d",&mem[i]);
+    scanf("%d",&p);
+    for(i=0;i<p;i++) scanf("%d",&proc[i]);
+
+    for(i=0;i<p;i++) alloc[i]=-1;
+
+    for(i=0;i<p;i++) {
+        min = 9999;
+        for(j=0;j<m;j++) {
+            if(mem[j]>=proc[i] && mem[j]<min) {
+                min = mem[j];
+                index = j;
+            }
+        }
+        if(min!=9999) {
+            alloc[i]=index;
+            mem[index]-=proc[i];
+        }
+    }
+
+    for(i=0;i<p;i++)
+        printf("P%d -> B%d\n",i+1,alloc[i]+1);
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.68 Mb
+Sample Input
+4
+100 500 200 300
+4
+212 417 112 426
+Your Output
+P1 -> B4
+P2 -> B2
+P3 -> B3
+P4 -> B0
