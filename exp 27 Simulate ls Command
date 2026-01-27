@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <dirent.h>
+
+int main() {
+    DIR *d = opendir(".");
+    struct dirent *dir;
+    while((dir=readdir(d))!=NULL)
+        printf("%s\n",dir->d_name);
+    closedir(d);
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.404 Mb
+Your Output
+in.txt
+solution_source.txt
+out.txt
+sol
+.
+sol.c
+..
+process.txt
