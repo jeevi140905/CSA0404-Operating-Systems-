@@ -1,0 +1,26 @@
+#include <pthread.h>
+#include <stdio.h>
+
+void* fun(void *arg) {
+    printf("Thread running\n");
+    pthread_exit(NULL);
+}
+
+int main() {
+    pthread_t t;
+    pthread_create(&t,NULL,fun,NULL);
+    pthread_join(t,NULL);
+    printf("Thread joined\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+2.076 Mb
+Sample Input
+
+Your Output
+Thread running
+Thread joined
