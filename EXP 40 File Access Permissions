@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+    printf("r-- : read\n");
+    printf("-w- : write\n");
+    printf("--x : execute\n");
+    printf("Users: Owner, Group, Others\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.396 Mb
+Your Output
+r-- : read
+-w- : write
+--x : execute
+Users: Owner, Group, Others
