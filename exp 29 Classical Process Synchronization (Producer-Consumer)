@@ -1,0 +1,30 @@
+#include <stdio.h>
+int mutex=1, full=0, empty=3;
+
+void producer() {
+    --mutex; ++full; --empty;
+    printf("Produced\n");
+    ++mutex;
+}
+void consumer() {
+    --mutex; --full; ++empty;
+    printf("Consumed\n");
+    ++mutex;
+}
+
+int main() {
+    producer();
+    consumer();
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.392 Mb
+Sample Input
+
+Your Output
+Produced
+Consumed
