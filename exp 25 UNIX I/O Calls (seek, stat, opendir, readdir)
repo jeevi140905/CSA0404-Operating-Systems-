@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <dirent.h>
+#include <sys/stat.h>
+
+int main() {
+    DIR *d;
+    struct dirent *dir;
+    struct stat s;
+
+    stat("test.txt",&s);
+    printf("File size: %ld\n",s.st_size);
+
+    d = opendir(".");
+    while((dir = readdir(d)) != NULL)
+        printf("%s\n",dir->d_name);
+    closedir(d);
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.704 Mb
+Your Output
+File size: 365072220166
+in.txt
+solution_source.txt
+out.txt
+sol
+.
+sol.c
+..
+process.txt
