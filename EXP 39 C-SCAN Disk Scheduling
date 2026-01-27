@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main() {
+    printf("C-SCAN disk scheduling simulation\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.308 Mb
+Sample Input
+Initial head position = 50
+Disk request queue = 82 170 43 140 24
+Your Output
+C-SCAN disk scheduling simulation
