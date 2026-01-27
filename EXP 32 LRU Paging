@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main() {
+    printf("LRU simulation using counters\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.404 Mb
+Sample Input
+
+Your Output
+LRU simulation using counters
