@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main() {
+    int start=5, len=4;
+    printf("Blocks allocated: ");
+    for(int i=start;i<start+len;i++)
+        printf("%d ",i);
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.744 Mb
+Sample Input
+Starting block = 5
+File length = 4 blocks
+
+Your Output
+Blocks allocated: 5 6 7 8 
