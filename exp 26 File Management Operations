@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    fp = fopen("file.txt","w");
+    fprintf(fp,"OS LAB");
+    fclose(fp);
+    remove("file.txt");
+    printf("File created and deleted\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.548 Mb
+Your Output
+File created and deleted
