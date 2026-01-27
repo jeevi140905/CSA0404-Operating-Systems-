@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main() {
+    int m, p, i, j, max, index;
+    int mem[10], proc[10], alloc[10];
+
+    printf("Enter number of memory blocks: ");
+    scanf("%d",&m);
+    for(i=0;i<m;i++) scanf("%d",&mem[i]);
+
+    printf("Enter number of processes: ");
+    scanf("%d",&p);
+    for(i=0;i<p;i++) scanf("%d",&proc[i]);
+
+    for(i=0;i<p;i++) alloc[i] = -1;
+
+    for(i=0;i<p;i++) {
+        max = -1; index = -1;
+        for(j=0;j<m;j++) {
+            if(mem[j] >= proc[i] && mem[j] > max) {
+                max = mem[j];
+                index = j;
+            }
+        }
+        if(index != -1) {
+            alloc[i] = index;
+            mem[index] -= proc[i];
+        }
+    }
+
+    printf("\nProcess\tBlock\n");
+    for(i=0;i<p;i++)
+        printf("%d\t%d\n", i+1, alloc[i]+1);
+
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.672 Mb
+Sample Input
+4
+100 500 200 300
+4
+212 417 112 426
+Your Output
+Enter number of memory blocks: Enter number of processes: 
+Process	Block
+1	2
+2	0
+3	4
+4	0
