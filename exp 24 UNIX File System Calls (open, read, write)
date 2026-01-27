@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main() {
+    int fd;
+    char msg[]="Hello UNIX";
+
+    fd = open("test.txt", O_CREAT|O_WRONLY, 0644);
+    write(fd, msg, sizeof(msg));
+    close(fd);
+
+    printf("File written successfully\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.488 Mb
+Your Output
+File written successfully
