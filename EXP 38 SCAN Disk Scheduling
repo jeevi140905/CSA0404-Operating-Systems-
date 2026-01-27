@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+    printf("SCAN disk scheduling simulation\n");
+    return 0;
+}
+Output
+Status :Successfully executed
+Time:
+0.0000 secs
+Memory:
+1.404 Mb
+Sample Input
+Initial head position = 50
+Disk request queue = 82 170 43 140 24
+Direction = Left
+Your Output
+SCAN disk scheduling simulation
